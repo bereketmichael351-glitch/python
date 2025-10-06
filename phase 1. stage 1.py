@@ -112,3 +112,36 @@ import datetime
 
 # --------------4. **String Reverse & Counter** — reverse user input & count letters
 
+def reverse_and_count(input_string):
+    """
+    Reverses the input string and counts the total number of letters (A-Z, a-z).
+    """
+    # 1. String Reversal
+    # Uses slicing [::-1] which is a Python idiomatic way to reverse a sequence
+    reversed_string = input_string[::-1]
+
+    # 2. Letter Counter
+    letter_count = 0
+    for char in input_string:
+        # The .isalpha() method checks if all characters in the string are 
+        # alphabetical (a-z and A-Z) and there is at least one character.
+        if char.isalpha():
+            letter_count += 1
+    
+    # Return the results
+    return reversed_string, letter_count
+
+# --- Main Program Execution ---
+
+# Get input from the user
+user_input = input("Enter a string (e.g., 'Hello World 123!'): ")
+
+# Call the function
+reversed_text, count = reverse_and_count(user_input)
+
+# Display the results
+print("\n--- Results ---")
+print(f"Original String: {user_input}")
+print(f"Reversed String: {reversed_text}")
+print(f"Total Letters (A-Z, a-z) Count: {count}")
+
