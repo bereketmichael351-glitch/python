@@ -12,13 +12,13 @@ total = 0
 print (  " "+"="*4 + "🍠🧀🍊" * 3 + "=" * 3 +
        "\n welcome to ower hotel! please order you choice from menu below 🧀🍊💜" .upper())
 
-__runing = True
+__running = True
 for keys, values in menu.items():
     print(f"  {keys:9} : {values:.2f}")
 
 print(" " "="*11)
-while __runing:
-    choice = input("Enter your choice (q to quit): ")
+while __running:
+    choice = input("Enter your choice (q to quit): ").lower().strip()
     if choice == 'q':
         print("thank you for shopping".title())
         break
@@ -35,6 +35,8 @@ for food in cart:
     print(f" {food:5}: ${menu.get(food)}")
     # total = total + food
 print(f"total cost: ${total:.2f}".title())
+
+print("-"*15)
 
 
 
